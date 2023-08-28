@@ -45,7 +45,7 @@ namespace Aplikacija1
             body.Location = new Point(0, 0);
             this.Controls.Add(body);
             body.Show();
-
+            
 
         }
 
@@ -65,7 +65,10 @@ namespace Aplikacija1
                 lblLocation.ForeColor = Color.OrangeRed;
                 lblLocation.Text = "REGION NOT FOUND.";
             }
-            label5.Text = body.MouseRegionId(body.mousePosition);
+            string limb = body.MouseRegionId(body.mousePosition);
+            label5.Text = limb;
+            groupBox1.Text = limb;
+
         }
 
         private void Subject_Paint(object sender, PaintEventArgs e)
@@ -86,6 +89,11 @@ namespace Aplikacija1
                 label2.Visible = false;
                 label5.Visible = false;
             }
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
